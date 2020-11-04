@@ -1,0 +1,25 @@
+{
+	"manifest_version": 2,
+	"name": "Wikidata Query Service Query Titles",
+	"description": "Support entering titles for queries in the Wikidata Query Service (and also in the beta Wikimedia Commons Query Service)",
+	"version": "0.1",
+	"content_scripts": [
+		{
+			"matches": ["https://query.wikidata.org/*", "https://wcqs-beta.wmflabs.org/*"],
+			"js": ["query-service-query-titles.js"]
+		}
+	],
+	"background": {
+		"scripts": [
+			"listen-for-navigation.js"
+		]
+	},
+	"permissions": [
+		"history", "webNavigation"
+	],
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "{cb5f7be5-321e-4b99-a39a-b8488526d4c6}"
+		}
+	}
+}
